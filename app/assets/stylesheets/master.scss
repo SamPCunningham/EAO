@@ -1,9 +1,9 @@
 @import "bootstrap";
 
 .booyah-box {
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -moz-box-shadow: 1px 1px 2px 0 #c2f61d;
+  -webkit-box-shadow: 1px 1px 2px 0 #c2f61d;
+  box-shadow: 1px 1px 2px 0 #c2f61d;
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
@@ -33,8 +33,8 @@ body {
   font-size:26px;
 }
 
-.footer {
-  text-align: right;
-  font-family: 'kaushan_scriptregular', sans-serif;
-  letter-spacing: 3px;
+.pagelist {
+  letter-spacing: normal;
+  padding: 5px;
+  word-spacing: 3px;
 }

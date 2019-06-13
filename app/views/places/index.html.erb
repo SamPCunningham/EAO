@@ -5,5 +5,12 @@
     <p><%= place.description %></p><br />
     
   </div>
-  
+
 <% end %>
+  
+  <div class="col-4 offset-1">
+    <div class="pagelist">
+      <%= will_paginate @places %>
+    </div>
+
+  </div>
