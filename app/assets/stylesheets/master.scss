@@ -34,7 +34,7 @@ body {
   font-size:26px;
 }
 
-.pagelist {
+.botpage {
   letter-spacing: normal;
   padding: 5px;
   word-spacing: 3px;
@@ -45,4 +45,8 @@ body {
   background-color: #FFEEEE;
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
+}
+
+#map {
+  height: 300px;
 }
