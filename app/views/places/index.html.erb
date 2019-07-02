@@ -9,13 +9,13 @@
     <% end %>
 
     <% if place.photos.present? %>
-      <% @place.photos.first do |photo| %>
+      <% place.photos.first do |photo| %>
         <div class="col-8 offset-2">
         <% if photo.avatar.present? %>
-        <%= image_tag photo.avatar.url %>
+        <%= image_tag photo.avatar.last.url %>
+        <%= photo.caption %>
         <% end %>
       <% end %>
-        <%= photo.caption %>
     <% end %>
 
     <% if place.comments.present? %>
