@@ -25,7 +25,7 @@
     }
   </script>
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACRTpYzlmRiYg3awHFw8yKg0peG0O3S0U">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACRTpYzlmRiYg3awHFw8yKg0peG0O3S0U&callback=initMap">
   </script>
 
   <div id="map"></div>
@@ -35,15 +35,64 @@
 
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+        Add a Photo
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel1">Add a Photo</h4>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+              <%= f.input :caption %>
+              <%= f.input :avatar %>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>        
+              <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+              </div>
+              <% end %>
+            </div>
+
+            </div>
+          </div>
+
+
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
     <% end %>
   </div>
+<br />
+<div class="clear"></div>
+<br />
+<% @place.photos.each do |photo| %>
+  <div class="col-12 col-sm-6">
+    <% if photo.avatar.present? %>
+      <%= image_tag photo.avatar.url %>
+    <% end %>
+    <%= photo.caption %>
+  </div>
+<% end %>
+
 </div>
 
 <div class="clear"></div>
 <br />
 <br />
+
+
+
+
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
