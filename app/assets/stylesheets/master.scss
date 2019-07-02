@@ -75,3 +75,15 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+.indexphoto {
+  display: block;
+  border-left: 10px solid #c2f61d;
+  margin-left: 1.5em 10px;
+  padding: 2px 8px 2px 15px;
+
+}
+
+.caption {
+  text-align: center;
+}

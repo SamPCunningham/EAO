@@ -8,15 +8,23 @@
       <small><%= place.user.email %></small>
     <% end %>
 
+<div class="row">
+  <div class="col-6">
+    <div class="indexphoto">
     <% if place.photos.present? %>
-      <% place.photos.first do |photo| %>
-        <div class="col-8 offset-2">
+      <% place.photos.each do |photo| %>
         <% if photo.avatar.present? %>
-        <%= image_tag photo.avatar.last.url %>
-        <%= photo.caption %>
+        <%= image_tag photo.avatar.url %>
         <% end %>
+    </div>
+    <div class="caption">
+        <%= photo.caption %>
+    </div>
       <% end %>
     <% end %>
+
+  </div>
+</div>
 
     <% if place.comments.present? %>
       <div class="col-12">
