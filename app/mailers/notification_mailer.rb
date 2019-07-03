@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-  default from: "no-reply@eatinout-sam-cunningham.herokuapp.com"
+  default from: "no-reply@eatinout.com"
 
   def comment_added(comment)
     @place = comment.place
